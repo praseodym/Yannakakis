@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'yannakakis.Main'
+
+repositories {
+    mavenCentral()
+}
+
+run {
+    if ( project.hasProperty("config") ) {
+        args config
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    learnlibVersion = '0.12.0'
+}
+
+dependencies {
+    compile('com.google.guava:guava:19.0')
+
+    compile("de.learnlib:learnlib-cache:${learnlibVersion}")
+    compile("de.learnlib:learnlib-basic-eqtests:${learnlibVersion}")
+    compile("de.learnlib:learnlib-core:${learnlibVersion}")
+    compile("de.learnlib:learnlib-dhc:${learnlibVersion}")
+    compile("de.learnlib:learnlib-eqtests:${learnlibVersion}")
+    compile("de.learnlib:learnlib-lstar-generic:${learnlibVersion}")
+    compile("de.learnlib:learnlib-ttt:${learnlibVersion}")
+    compile("de.learnlib:learnlib-parallelism:${learnlibVersion}")
+    compile("de.learnlib:learnlib-kearns-vazirani:${learnlibVersion}")
+    compile("de.learnlib:learnlib-simulator:${learnlibVersion}")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}

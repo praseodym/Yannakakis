@@ -22,3 +22,5 @@ build
 *splitting_tree
 *test_suite
 
+# gradle
+.gradle/
