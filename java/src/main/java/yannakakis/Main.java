@@ -144,7 +144,7 @@ public class Main {
 
 		while(true) {
 			if(saveAllHypotheses) {
-				String dir = "/Users/joshua/Documents/PhD/Machines/Mealy/esms3/";
+				String dir = "hypotheses/";
 				String filename = dir + "hyp." + stage + ".obf.dot";
 				PrintWriter output = new PrintWriter(filename);
 				GraphDOT.write(learner.getHypothesisModel(), alphabet, output);
